@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1> {{room.name}} </h1>
+
+{% if room.ph <= 0 %}
+	<pre>{{room.ending}}</pre>
+	<form action='/game' method='POST'>
+		<input type='submit' name='action' value='You Died'>
+	</form>
+
+{% elif room.health <= 0 %}
+	<pre>{{room.playerwin}}</pre>
+	<form action='/game' method='POST'>
+		<input type='submit' name='action' value='You Won'>
+	</form>
+
+{% else %}
+<h3>Player Health: {{room.ph}}</h3>
+<h3>Enemy Health: {{room.health}}</h3>
+<h3>Rounds Remaining: {{room.bullets}}</h3>
+<br>
+<h3>What do you do?</h3>
+
+<form action='/game' method='POST'>
+	<input type='submit' name='action' value='aimshot'>
+	<input type='submit' name='action' value='rapidfire'>
+	<input type='submit' name='action' value='reload'>
+</form>
+
+{% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1 style='color:DarkCyan'> Upload new File </h1>
+<form method=post enctype=multipart/form-data>
+	<input type=file name=file>
+	<input type=submit value=Upload>
+</form>
+<h2>
+<a href = "http://localhost:5000/hello">Go back to form</a>
+</h2>
+{% endblock %}

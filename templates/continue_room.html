@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>{{room.name}}</h1>
+<pre>{{room.description}}</pre>
+
+<p>
+	<form action = '/game' method='POST'>
+		<input type='submit' name='action' value='continue'>
+	</form>
+</p>
+
+{% endblock %}

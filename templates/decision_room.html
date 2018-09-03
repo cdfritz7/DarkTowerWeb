@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>{{room.name}}</h1>
+<pre>{{room.description}}</pre>
+
+<p>
+	<form>
+		<input type="submit" name="action" value="yes">
+		<input type="submit" name="action" value="no">
+	</form>
+</p>
+
+{% endblock %}
